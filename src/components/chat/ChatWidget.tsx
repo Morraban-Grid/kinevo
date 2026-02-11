@@ -1,6 +1,8 @@
+import ChatMessage from './ChatMessage'
 import React, { useState } from 'react'
 import { mockInsights } from '@/data/mockInsights'
 import { ChatMessage } from '@/types/chat'
+
 
 /**
  * ChatWidget simulates an AI assistant interaction.
@@ -55,19 +57,22 @@ const ChatWidget: React.FC = () => {
     <div className="chat-widget">
       <div className="chat-messages">
         {messages.map((message) => (
-          <div
-            key={message.id}
-            className={`chat-bubble ${message.role}`}
-          >
-            {message.content}
-          </div>
+            <ChatMessage key={message.id} message={message} />
         ))}
 
+
         {isTyping && (
-          <div className="chat-bubble assistant typing">
-            Typing...
-          </div>
+            <ChatMessage
+                message={{
+                    id: 'typing',
+                    role: 'assistant',
+                    content: '',
+                    timestamp: new Date(),
+                }}
+                isTyping
+            />
         )}
+
       </div>
 
       <div className="chat-input">
