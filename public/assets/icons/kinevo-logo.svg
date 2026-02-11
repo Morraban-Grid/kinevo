@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420" height="120" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kinevo Logo">
+  <defs>
+    <!-- Teal gradient for VO -->
+    <linearGradient id="voGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0b1220" rx="16"/>
+
+  <!-- Text Group -->
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+     font-weight="800"
+     font-size="72"
+     letter-spacing="2">
+
+    <!-- KINE -->
+    <text x="40" y="80" fill="#e5e7eb">
+      KINE
+    </text>
+
+    <!-- VO -->
+    <text x="230" y="80" fill="url(#voGradient)">
+      VO
+    </text>
+  </g>
+</svg>

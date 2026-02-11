@@ -8,6 +8,24 @@ export function capitalize(value: string): string {
 }
 
 /**
+ * Formats a Date instance into a short, human-friendly string.
+ * Example: 2024-03-01 -> "1 mar 2024" (locale aware).
+ */
+export function formatDate(date: Date): string {
+  if (!date) return ''
+
+  try {
+    return new Intl.DateTimeFormat('es-ES', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(date)
+  } catch {
+    return ''
+  }
+}
+
+/**
  * Formats a duration (in minutes) into a human-readable string.
  * Example: 45 -> "45 min", 90 -> "1h 30m"
  */

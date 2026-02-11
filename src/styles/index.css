@@ -44,19 +44,20 @@ body {
 
 /* App container */
 .app-container {
+  width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 /* Header */
 .app-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .app-header h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -67,12 +68,13 @@ body {
   font-size: 0.95rem;
 }
 
-/* Content */
+/* Content wrapper */
 .app-content {
   background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  border-radius: 28px;
+  padding: 1.5rem 1.25rem 2rem;
   box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
 }
 
 .app-content p {
@@ -94,11 +96,69 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
   background: linear-gradient(
     180deg,
     #f9fafb 0%,
     #eef2f7 100%
   );
+}
+
+@media (min-width: 768px) {
+  .app-layout {
+    padding: 3rem 1.5rem;
+    background: radial-gradient(circle at top, #e0f2fe 0, #f9fafb 45%, #e5e7eb 100%);
+  }
+}
+
+/* =====================================
+   Dashboard Hero
+   ===================================== */
+
+.dashboard-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 24px;
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(37, 99, 235, 0.9)),
+    url('/assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #e5e7eb;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+}
+
+.dashboard-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.hero-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f9fafb;
+}
+
+.hero-subtitle {
+  font-size: 0.8rem;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.dashboard-hero .btn {
+  align-self: flex-start;
 }
 
 /* =====================================
@@ -120,6 +180,95 @@ body {
   margin-top: 0.5rem;
   font-size: 0.95rem;
   color: var(--color-secondary);
+}
+
+/* =====================================
+   Sections & Lists
+   ===================================== */
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.section-header {
+  margin-bottom: 0.9rem;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  color: var(--color-secondary);
+}
+
+.section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.stat-card {
+  padding: 0.8rem 0.7rem;
+}
+
+.stat-value-lg {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.stat-hint {
+  margin-top: 0.1rem;
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 380px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Pill toggle */
+.pill-toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill-toggle {
+  border: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #e5e7eb;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.pill-toggle-active {
+  background: #2563eb;
+  color: #f9fafb;
+  transform: translateY(-1px);
 }
 
 /* =====================================
@@ -354,10 +503,10 @@ body {
 }
 
 .meal-card-body {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
 }
 
 .meal-stat {
@@ -368,6 +517,11 @@ body {
 .meal-card-footer {
   margin-top: 1rem;
   font-size: 0.75rem;
+  color: var(--color-secondary);
+}
+
+.meal-description {
+  font-size: 0.82rem;
   color: var(--color-secondary);
 }
 
