@@ -1,0 +1,28 @@
+/* =====================================
+   Kinevo – Tailwind CSS Entry Point
+   Utility-first styling layer
+   ===================================== */
+
+/*
+  NOTE:
+  Tailwind CSS is not active until it is
+  installed and configured.
+  This file prepares the project structure
+  for future integration without breaking
+  the current UI.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------
+   Custom component extensions
+   ------------------------------------- */
+
+/*
+  Example:
+  .btn-primary {
+    @apply rounded-xl px-4 py-2 font-medium;
+  }
+*/
