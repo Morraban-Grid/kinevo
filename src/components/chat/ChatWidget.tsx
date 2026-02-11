@@ -1,7 +1,9 @@
+import QuickActions from './QuickActions'
 import ChatMessage from './ChatMessage'
 import React, { useState } from 'react'
 import { mockInsights } from '@/data/mockInsights'
-import { ChatMessage } from '@/types/chat'
+import { ChatMessage as ChatMessageType } from '@/types/chat'
+
 
 
 /**
@@ -9,7 +11,7 @@ import { ChatMessage } from '@/types/chat'
  * This is a UI-only component and does not connect to any backend service.
  */
 const ChatWidget: React.FC = () => {
-  const [messages, setMessages] = useState<ChatMessage[]>([
+  const [messages, setMessages] = useState<ChatMessageType[]>([
     {
       id: 'initial-1',
       role: 'assistant',
@@ -25,7 +27,7 @@ const ChatWidget: React.FC = () => {
   const handleSend = () => {
     if (!inputValue.trim()) return
 
-    const userMessage: ChatMessage = {
+    const userMessage: ChatMessageType = {
       id: crypto.randomUUID(),
       role: 'user',
       content: inputValue,
@@ -41,7 +43,7 @@ const ChatWidget: React.FC = () => {
       const randomInsight =
         mockInsights[Math.floor(Math.random() * mockInsights.length)]
 
-      const assistantMessage: ChatMessage = {
+      const assistantMessage: ChatMessageType = {
         id: crypto.randomUUID(),
         role: 'assistant',
         content: randomInsight.message,
@@ -53,27 +55,33 @@ const ChatWidget: React.FC = () => {
     }, 1200)
   }
 
+  const handleQuickAction = (text: string) => {
+    setInputValue(text)
+  }
+
+
   return (
     <div className="chat-widget">
       <div className="chat-messages">
         {messages.map((message) => (
-            <ChatMessage key={message.id} message={message} />
+          <ChatMessage key={message.id} message={message} />
         ))}
 
-
         {isTyping && (
-            <ChatMessage
-                message={{
-                    id: 'typing',
-                    role: 'assistant',
-                    content: '',
-                    timestamp: new Date(),
-                }}
-                isTyping
-            />
+          <ChatMessage
+            message={{
+              id: 'typing',
+              role: 'assistant',
+              content: '',
+              timestamp: new Date(),
+            }}
+            isTyping
+          />
         )}
-
       </div>
+
+      {/* Quick actions appear between messages and input */}
+      <QuickActions onAction={handleQuickAction} />
 
       <div className="chat-input">
         <input

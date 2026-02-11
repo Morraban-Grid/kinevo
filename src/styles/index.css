@@ -188,3 +188,92 @@ body {
   cursor: pointer;
   font-weight: 500;
 }
+
+/* =====================================
+   Quick Actions
+   ===================================== */
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.quick-action-button {
+  background: #f1f5f9;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quick-action-button:hover {
+  background: #e2e8f0;
+}
+
+/* =====================================
+   Workout Card
+   ===================================== */
+
+.workout-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-3px);
+}
+
+.workout-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workout-card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.workout-type {
+  font-size: 0.75rem;
+  background: #eef2f7;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-md);
+}
+
+.workout-card-body {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.workout-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+}
+
+.stat-value {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.workout-card-footer {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+}
