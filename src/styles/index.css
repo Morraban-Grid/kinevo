@@ -317,3 +317,56 @@ body {
 .empty-action-button:hover {
   transform: translateY(-2px);
 }
+
+/* =====================================
+   Meal Plan Card
+   ===================================== */
+
+.meal-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-3px);
+}
+
+.meal-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.meal-type {
+  font-size: 0.75rem;
+  background: #eef2f7;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-md);
+}
+
+.meal-card-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.meal-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-card-footer {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+}
