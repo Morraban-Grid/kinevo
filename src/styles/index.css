@@ -100,3 +100,24 @@ body {
     #eef2f7 100%
   );
 }
+
+/* =====================================
+   Header
+   ===================================== */
+
+.app-header {
+  padding: 2rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.header-content h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header-content p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
