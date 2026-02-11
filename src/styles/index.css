@@ -277,3 +277,43 @@ body {
   font-size: 0.75rem;
   color: var(--color-secondary);
 }
+
+/* =====================================
+   Workout Empty State
+   ===================================== */
+
+.workout-empty-state {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.empty-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.empty-content p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}
+
+.empty-action-button {
+  margin-top: 1.2rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.empty-action-button:hover {
+  transform: translateY(-2px);
+}
