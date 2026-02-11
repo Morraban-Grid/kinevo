@@ -85,3 +85,18 @@ body {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
+
+/* =====================================
+   Layout
+   ===================================== */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    #f9fafb 0%,
+    #eef2f7 100%
+  );
+}
